@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: monospace;
-    background: #575656;
+    background: #ffffff;
     height: 100vh;
     overflow-x: hidden;  
 }
@@ -14,7 +14,22 @@ main {
     align-items: center;
     padding: 30px 0;
 }
-
+main::before{
+    width: 450px;
+    height: 300px;
+    content: '';
+    background-image: linear-gradient(
+        45deg,  #fc2f2f,blue
+    );
+    position: absolute;
+    z-index: -1;
+    border-radius: 20% 30% 80% 10%;
+    filter: blur(110px);
+    top: 20%;
+    left: 45%;
+    transition: 0.7s;
+    transform: translate(-110%, 100%) rotate(70deg)
+}
 .left-cadastro {
     width: 50vw;
     height: 100vh;
@@ -26,7 +41,7 @@ main {
 
 .left-cadastro>h1 {
     font-size: 3vw;
-    color: #77ffc0;
+    color: #a452bd;
 }
 
 .cadastro-img {
@@ -50,19 +65,19 @@ main {
     align-items: center;
     flex-direction: column;
     padding: 30px 35px;
-    background: #575656;
+    background: #ffffff;
     border-radius: 20px;
-    box-shadow: 0px 10px 40px #171717;
+    box-shadow: 0px 1px 21px rgba(187, 171, 204, 0.8);
 }
 
 .card-cadastro>h1 {
-    color: #77ffc0;
+    color: #a452bd;
     font-weight: 800;
     margin: 0;
 }
 
 .card-cadastro>h2{
-    color: #77ffc0;
+    color: #a452bd;
     font-weight: 800;
     margin: 0;
 }
@@ -82,10 +97,10 @@ main {
     border: none;
     border-radius: 10px;
     padding: 15px;
-    background-color: #514869;
-    color: #f0ffffde;
+    background-color: #eae9ec;
+    color: #000000de;
     font-size: 12pt;
-    box-shadow: 0px 10px 40px #171717;
+    box-shadow: 0px 5px 12px #b1a9b3;
     outline: none;
     box-sizing: border-box;
 }
@@ -97,17 +112,20 @@ main {
 }
 
 #input-FeedBack::placeholder{
+    color: black;
     line-height: 1;
     vertical-align: top;
 }
 
 .textfield>label {
-    color: #f0ffffde;
+    font-weight: bold;
+    font-size: 14px;
+    color: #000000de;
     margin-bottom: 10px;
 }
 
 .textfield>input::placeholder {
-    color: #f0ffff94;
+    color: #00000094;
 }
 
 #PFeedback{
@@ -125,8 +143,8 @@ main {
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 2px;
-    color: #2b134b;
-    background-color: #00ff88;
+    color: #ffffff;
+    background-color: #a452bd;
     cursor: pointer;
     box-shadow: 0px 10px 40px -12px #00ff8052;
 
@@ -147,7 +165,7 @@ main {
 }
 
 a {
-    color: fff;
+    color: black;
     text-decoration: none;
     transition: 0.3s;
 }
@@ -158,9 +176,12 @@ a:hover {
 }
 
 .logo {
+    font-weight: bold;
+    font-family: monospace;
     font-size: 24px;
     text-transform: uppercase;
     letter-spacing: 4px;
+    color: rgb(0, 0, 0);
 }
 
 nav {
@@ -168,11 +189,22 @@ nav {
     justify-content: space-around;
     align-items: center;
     font-family: monospace;
-    color: #FFF;
-    background: #23232e;
+    background: rgb(248, 247, 247);
     height: 8vh;
     padding: 10px;
+    border-bottom: 1px solid rgb(229, 228, 233);
+    position: relative;
 }
+nav::after {
+    content: "";
+    position: absolute;
+    bottom: -23px;
+    left: 0;
+    right: 0;
+    height: 23px; 
+    background: linear-gradient(to top, rgba(255, 0, 0, 0), rgba(233, 225, 241, 0.9)); 
+}
+
 
 .nav-list {
     display: flex;
@@ -181,6 +213,10 @@ nav {
 }
 
 .nav-list li {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
     letter-spacing: 3px;
     margin-left: 32px;
 }
@@ -190,13 +226,13 @@ footer{
     padding: 0;
     width: 100%;
     height: 150px;
-    border-top: 1px solid #FFF;
+    border-top: 1px solid #a599a4;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
     align-items: center;
     padding: 15px;
-    background: #3b3b3b;
+    background: #d3cfdd;
 
 }
 
@@ -206,7 +242,7 @@ footer > div {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #fff;
+    color: #000000;
     font-family: Arial, Helvetica, sans-serif;
     padding: 5px;
 
