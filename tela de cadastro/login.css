@@ -90,7 +90,9 @@ main::before{
     justify-content: center;
     margin: 10px 0px;
 }
-
+.textfield #senha-aviso{
+    margin-top: 20px;
+}
 .textfield>input {
     width: 100%;
     height: 40px;
