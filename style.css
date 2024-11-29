@@ -86,11 +86,19 @@ nav::after {
     --item5-zindex: 7;
     --item5-opacity: 0;
 }
-
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* carousel */
 .carousel{
     margin-top: 90px;
-    height: 800px;
+    height: 600px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     overflow: hidden;
     position: relative;
 }
@@ -104,6 +112,9 @@ nav::after {
     height: 80%;
 }
 .carousel .list .item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: absolute;
     left: 0;
     top: 0;
@@ -207,11 +218,11 @@ nav::after {
 
 /* detalhes vey vivenciass veyyyrr */
 .carousel .list .item .intro .name {
-    font-size: 4em;
+    font-size: 2.8em;
     line-height: 1em;
 }
 .carousel .list .item .intro .profession{
-    font-size: 2em;
+    font-size: 1.9em;
     font-weight: 500;
 }
 .carousel .list .item .intro .description{
