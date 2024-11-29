@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    color: black;
+    margin: 80px;
+    text-align: center;
+    background-color: rgb(252, 252, 252);
+    width: 500px;
+    height: 500px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.card>h1{
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.btn{
+    font-size: 17px;
+    padding: 10px 50px;
+    border: none;
+    background-color: #202022;
+    color: #fff;
+    border-radius: 10px;
+    font-weight:  600px ;
+    transition: 0.5s background;
+    cursor: pointer;
+}
+
+.btn:hover{
+    transition: 0.5s background;
+    background-color: #333;
+
+}
+
+
+
+
+.card>img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
