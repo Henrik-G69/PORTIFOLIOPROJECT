@@ -10,55 +10,50 @@
 
 <body>
     <header>
-        <!--Barra de "Tarefas"-->
         <nav>
             <a class="logo" href="/">Portifolio Project</a>
-            <!--MEnu com 3 linhas-->
             <ul class="nav-list">
                 <li><a href="./../index.html">Inicio</a></li>
                 <li><a href="./login.html">Login</a></li>
                 <li><a href="./PORTIFOLIOPROJECT/">Sobre nós</a></li>
             </ul>
-
         </nav>
     </header>
 
     <main>
-        <!--Parte esquerda da tela-->
         <div class="left-cadastro">
             <h1>Faça seu cadastro <br> e nos dê seu Feedback</h1>
             <img src="img da tela de cadastro/code-snippets-animate.svg" class="cadastro-img" alt="Animacao">
         </div>
-        <!--Parte direita da tela-->
+
         <div class="right-cadastro">
-            <form class="card-cadastro">
+            <form class="card-cadastro" id="feedbackForm">
                 <h1>Cadastre-se</h1>
                 <div class="textfield">
                     <label for="usuário">Usuário</label>
                     <input type="text" name="usuario" placeholder="Usuário">
                 </div>
                 <div class="textfield">
-                    <label for="email ">email</label>
-                    <input type="text" name="email" placeholder="email">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" placeholder="Email">
                 </div>
                 <div class="textfield">
                     <label for="senha">Senha</label>
-                    <input type="password" name="senha" placeholder="Senha">
+                    <input type="password" id="senha" name="senha" placeholder="Senha">
+                    <div id="senha-aviso" style="color: red; display: none;">A senha deve ter pelo menos 8 caracteres.</div>
                 </div>
-                <button class="btn-envio">
-                    Cadastrar
-                </button>
+                <button class="btn-envio" type="submit">Cadastrar</button>
+                
                 <h2>Feedback</h2>
                 <div class="textfield">
                     <label for="Sua opinião">Nos dê seu feedback!</label>
                     <input id="input-FeedBack" type="text" name="Feedback" placeholder="Feedback">
                 </div>
-                <button class="btn-envio">
-                    Enviar
-                </button>
+                <button class="btn-envio" type="button" id="btn-envio">Enviar</button>
             </form>
         </div>
     </main>
+
     <footer>
         <div class="footer-block">
             <h1>Equipe</h1>
@@ -74,23 +69,20 @@
         <div class="footer-block">
             <h1>Sobre</h1>
             <p>
-                Somos seis profissionais prontos para apresentar nossas habilidades, experiências e o que nos torna únicos no mercado
+                Somos seis profissionais prontos para apresentar nossas habilidades, experiências e o que nos torna únicos no mercado.
             </p>
         </div>
-
 
         <div class="footer-block">
             <h1>Contato</h1>
             <p>
-                <br>
-                (81)98364-7737
-                (81)99272-9255
+                (81)98364-7737<br>
+                (81)99272-9255<br>
                 (81)99515-4915
             </p>
         </div>
-
-
     </footer>
+    <script src="login.js"></script>
 </body>
 
 </html>
