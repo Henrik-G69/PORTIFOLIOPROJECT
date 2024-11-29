@@ -1,7 +1,21 @@
+
+
+:root{
+    --background-color: #ffffff;
+    --text-color: #000000;
+}
+:root.dark {
+    --background-color: #353434;
+    --text-color: #ffffff;
+}
+:root.dark nav::after {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(32, 32, 32, 0.9));
+}
+
 body {
     margin: 0;
     font-family: monospace;
-    background: #ffffff;
+    background: var(--background-color);
     height: 100vh;
     overflow-x: hidden;  
 }
@@ -41,7 +55,7 @@ main::before{
 
 .left-cadastro>h1 {
     font-size: 3vw;
-    color: #a452bd;
+    color: var(--text-color);
 }
 
 .cadastro-img {
@@ -55,8 +69,8 @@ main::before{
     justify-content: center;
     align-items: center;
 }
-
-
+ 
+/* Sombra do card-cadastro no modo claro */
 .card-cadastro {
     width: 350px;
     margin-top: 100px;
@@ -65,19 +79,25 @@ main::before{
     align-items: center;
     flex-direction: column;
     padding: 30px 35px;
-    background: #ffffff;
+    background: var(--background-color);
     border-radius: 20px;
-    box-shadow: 0px 1px 21px rgba(187, 171, 204, 0.8);
+    box-shadow: 0px 1px 21px rgba(187, 171, 204, 0.8); /* Sombra suave para o modo claro */
 }
 
+/* Sombra do card-cadastro no modo escuro */
+:root.dark .card-cadastro {
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.8); /* Sombra mais escura no modo escuro */
+}
+
+
 .card-cadastro>h1 {
-    color: #a452bd;
+    color: var(--text-colo);
     font-weight: 800;
     margin: 0;
 }
 
 .card-cadastro>h2{
-    color: #a452bd;
+    color: var(--text-colo);
     font-weight: 800;
     margin: 0;
 }
@@ -99,12 +119,15 @@ main::before{
     border: none;
     border-radius: 10px;
     padding: 15px;
-    background-color: #eae9ec;
-    color: #000000de;
+    background-color: var(--background-color);
+    color: var(--text-color);
     font-size: 12pt;
     box-shadow: 0px 5px 12px #b1a9b3;
     outline: none;
     box-sizing: border-box;
+}
+:root.dark .textfield>input {
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.8); /* Sombra mais escura no modo escuro */
 }
 
 #input-FeedBack{
@@ -114,7 +137,7 @@ main::before{
 }
 
 #input-FeedBack::placeholder{
-    color: black;
+    color: var(--text-color);
     line-height: 1;
     vertical-align: top;
 }
@@ -122,16 +145,16 @@ main::before{
 .textfield>label {
     font-weight: bold;
     font-size: 14px;
-    color: #000000de;
+    color: var(--text-color);
     margin-bottom: 10px;
 }
 
 .textfield>input::placeholder {
-    color: #00000094;
+    color: var(--text-color);
 }
 
 #PFeedback{
-    color: #77ffc0;
+    color: var(--text-color);
     padding: 10px;
 }
 
@@ -145,7 +168,7 @@ main::before{
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 2px;
-    color: #ffffff;
+    color: var(--text-color);
     background-color: #a452bd;
     cursor: pointer;
     box-shadow: 0px 10px 40px -12px #00ff8052;
@@ -167,7 +190,7 @@ main::before{
 }
 
 a {
-    color: black;
+    color: var(--text-color);
     text-decoration: none;
     transition: 0.3s;
 }
@@ -183,7 +206,7 @@ a:hover {
     font-size: 24px;
     text-transform: uppercase;
     letter-spacing: 4px;
-    color: rgb(0, 0, 0);
+    color: var(--text-color);
 }
 
 nav {
@@ -191,7 +214,7 @@ nav {
     justify-content: space-around;
     align-items: center;
     font-family: monospace;
-    background: rgb(248, 247, 247);
+    background: var(--background-color);
     height: 8vh;
     padding: 10px;
     border-bottom: 1px solid rgb(229, 228, 233);
@@ -211,11 +234,11 @@ nav::after {
 .nav-list {
     display: flex;
     list-style: none;
-    color: #FFF;
+    color: var(--text-color);
 }
 
 .nav-list li {
-    color: black;
+    color: var(--text-color);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     font-weight: bold;
@@ -233,7 +256,7 @@ footer{
     flex-direction: column;
     align-items: center;
     padding: 15px;
-    background: #d3cfdd;
+    background: var(--background-color);
 
 }
 
@@ -252,7 +275,7 @@ footer{
 
 footer > div {
     width: 50px;
-    color: #000000;
+    color: var(--text-color);
     font-family: Arial, Helvetica, sans-serif;
     padding: 5px;
 

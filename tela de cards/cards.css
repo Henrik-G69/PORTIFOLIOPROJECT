@@ -75,8 +75,8 @@ main {
 .card {
     color: black;
     background-color: rgb(252, 252, 252);
-    width: 330px;
-    height: 450px;
+    width: 350px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;

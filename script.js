@@ -4,76 +4,60 @@ let backButton = document.getElementById('back');
 let seeMoreButtons = document.querySelectorAll('.see-more');
 let carousel = document.querySelector('.carousel');
 let listHTML = document.querySelector('.carousel .list');
+const toggleButton = document.getElementById('theme-toggle');
+const rootElement = document.documentElement;
 
-/* configura os botões de next e prev */
-nextButton.onclick = function(){
-    showSlider('next');
-}
-prevButton.onclick = function(){
-    showSlider('prev');
-}
+/* Configura os botões de next e prev */
+nextButton.onclick = () => showSlider('next');
+prevButton.onclick = () => showSlider('prev');
 
-/* torna a tela sensivel as teclas <- ->*/
-/* verifica se a classe 'showDetail' não existe em carousel */
-document.addEventListener('keyup', function(event){
-    if (carousel.classList.contains('showDetail') != true){
-        if (event.keyCode === 39 || event.keyCode === 68){
-            showSlider('next');
+/* Torna a tela sensível às teclas */
+document.addEventListener('keyup', function (event) {
+    if (!carousel.classList.contains('showDetail')) {
+        if (event.key === 'ArrowRight' || event.key.toLowerCase() === 'd') showSlider('next');
+        if (event.key === 'ArrowLeft' || event.key.toLowerCase() === 'a') showSlider('prev');
     }
-    }
-});
-document.addEventListener('keyup', function(event){
-    if (carousel.classList.contains ('showDetail') != true){
-        if (event.keyCode === 37 || event.keyCode === 65){
-            showSlider('prev');
-        }
-    }
-});
-document.addEventListener('keyup', function(event){
-    if (event.keyCode === 38 || event.keyCode === 87){
-        carousel.classList.add('showDetail'); 
-    }
-});
-document.addEventListener('keyup', function(event){
-    if (event.keyCode === 40 || event.keyCode === 83){
-        carousel.classList.remove('showDetail');
-    }
+    if (event.key === 'ArrowUp' || event.key.toLowerCase() === 'w') carousel.classList.add('showDetail');
+    if (event.key === 'ArrowDown' || event.key.toLowerCase() === 's') carousel.classList.remove('showDetail');
 });
 
-
-/* clique nos botões */
-let unAcceptClick;
 const showSlider = (type) => {
-    nextButton.style.pointerEvents = 'none';
-    prevButton.style.pointerEvents = 'none';
-    carousel.classList.remove('prev','next')
-    let items = document.querySelectorAll('.carousel .list .item');
-    if(type === 'next'){
+    nextButton.disabled = true;
+    prevButton.disabled = true;
+
+    const items = document.querySelectorAll('.carousel .list .item');
+    if (type === 'next') {
         listHTML.appendChild(items[0]);
         carousel.classList.add('next');
-    }else{
-        let positionLast = items.length -1;
-        listHTML.prepend(items[positionLast]);
+    } else {
+        const lastItem = items[items.length - 1];
+        listHTML.prepend(lastItem);
         carousel.classList.add('prev');
     }
-    clearTimeout(unAcceptClick);
-    unAcceptClick = setTimeout(() =>{ 
-        nextButton.style.pointerEvents = 'auto';
-        prevButton.style.pointerEvents = 'auto';
+
+    setTimeout(() => {
+        nextButton.disabled = false;
+        prevButton.disabled = false;
     }, 300);
+};
+
+/* Botões para detalhes */
+seeMoreButtons.forEach((button) =>
+    button.addEventListener('click', () => carousel.classList.add('showDetail'))
+);
+backButton.addEventListener('click', () => carousel.classList.remove('showDetail'));
+
+/* Controle de tema */
+const savedTheme = localStorage.getItem('theme') || 'light';
+rootElement.classList.toggle('dark', savedTheme === 'dark');
+updateToggleButtonText();
+
+toggleButton.addEventListener('click', () => {
+    const isDark = rootElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    updateToggleButtonText();
+});
+
+function updateToggleButtonText() {
+    toggleButton.textContent = rootElement.classList.contains('dark') ? '☀️' : '🌙';
 }
-
-/* botões para os detalhes */
-
-seeMoreButtons.forEach(button =>{
-    button.onclick = function(){
-        carousel.classList.add('showDetail');
-    }
-})
-backButton.onclick = function(){
-    carousel.classList.remove('showDetail');
-}
-
-
-
-/* botões para o feedback/contato */
