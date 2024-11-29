@@ -5,8 +5,6 @@ let seeMoreButtons = document.querySelectorAll('.see-more');
 let carousel = document.querySelector('.carousel');
 let listHTML = document.querySelector('.carousel .list');
 
-let nextDetails = document.querySelectorAll('.next-details');
-let prevDetails = document.querySelectorAll('.prev-details');
 /* configura os botões de next e prev */
 nextButton.onclick = function(){
     showSlider('next');
@@ -39,7 +37,6 @@ document.addEventListener('keyup', function(event){
 document.addEventListener('keyup', function(event){
     if (event.keyCode === 40 || event.keyCode === 83){
         carousel.classList.remove('showDetail');
-        carousel.classList.remove('showCards');
     }
 });
 
@@ -74,7 +71,6 @@ seeMoreButtons.forEach(button =>{
     }
 })
 backButton.onclick = function(){
-    carousel.classList.remove('showCards');
     carousel.classList.remove('showDetail');
 }
 
